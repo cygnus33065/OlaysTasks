@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/numberListFragment"
-        android:name="com.example.olaystasks.NumberListFragment"
+        android:name="com.example.olaystasks.ui.view.NumberListFragment"
         android:label="NumberListFragment" />
 </navigation>

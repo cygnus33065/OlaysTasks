@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.olaystasks.databinding.ToastFragmentBinding
 
 class ToastFragment: Fragment() {
@@ -22,6 +23,7 @@ class ToastFragment: Fragment() {
         binding = ToastFragmentBinding.inflate(inflater, container, false)
         binding.toastButton.setOnClickListener {
             showToast()
+            findNavController().navigate(R.id.action_toastFragment_to_numberListFragment)
         }
         return binding.root
     }
