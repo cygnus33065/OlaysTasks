@@ -7,10 +7,10 @@ import com.example.olaystasks.databinding.NumberItemBinding
 
 class NumberAdapter():
 RecyclerView.Adapter<NumberAdapter.NumberViewHolder>(){
-    var numberList: List<Int> = mutableListOf()
+    lateinit var numberList: IntRange
     var myHolder: NumberViewHolder? = null
 
-    fun updateNumberList(listOfNumbers: List<Int>){
+    fun updateNumberList(listOfNumbers: IntRange){
         this.numberList = listOfNumbers
         notifyDataSetChanged()
     }
@@ -29,12 +29,12 @@ RecyclerView.Adapter<NumberAdapter.NumberViewHolder>(){
     override fun onBindViewHolder(holder: NumberViewHolder, position: Int) {
         this.myHolder = holder
         holder.binding.apply{
-            val number = numberList[position]
+            val number = numberList.elementAt(position)
             tvNumberItem.text = number.toString()
         }
     }
 
-    override fun getItemCount(): Int = numberList.size
+    override fun getItemCount(): Int = numberList.count()
 
 
     class NumberViewHolder(var binding: NumberItemBinding):
