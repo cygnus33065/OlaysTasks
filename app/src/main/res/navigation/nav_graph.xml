@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/toastFragment">
+
+    <fragment
+        android:id="@+id/toastFragment"
+        android:name="com.example.olaystasks.ToastFragment"
+        android:label="toastFragment" >
+        <action
+            android:id="@+id/action_toastFragment_to_numberListFragment"
+            app:destination="@id/numberListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberListFragment"
+        android:name="com.example.olaystasks.NumberListFragment"
+        android:label="NumberListFragment" />
+</navigation>
